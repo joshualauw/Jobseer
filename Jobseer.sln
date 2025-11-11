@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36623.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jobseer.API", "Jobseer.API\Jobseer.API.csproj", "{22C745CA-E29D-447C-8542-F1045F8472F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jobseer.Domain", "Jobseer.Domain\Jobseer.Domain.csproj", "{E826D074-5BED-4FDF-829D-D14610E7A9C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jobseer.Application", "Jobseer.Application\Jobseer.Application.csproj", "{F4E9743F-B24C-4289-AAD3-1575EB0F1DA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jobseer.Infrastructure", "Jobseer.Infrastructure\Jobseer.Infrastructure.csproj", "{85AC61BF-DC8D-47C5-A0F8-520CC03D3E0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22C745CA-E29D-447C-8542-F1045F8472F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22C745CA-E29D-447C-8542-F1045F8472F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22C745CA-E29D-447C-8542-F1045F8472F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22C745CA-E29D-447C-8542-F1045F8472F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E826D074-5BED-4FDF-829D-D14610E7A9C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E826D074-5BED-4FDF-829D-D14610E7A9C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E826D074-5BED-4FDF-829D-D14610E7A9C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E826D074-5BED-4FDF-829D-D14610E7A9C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4E9743F-B24C-4289-AAD3-1575EB0F1DA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4E9743F-B24C-4289-AAD3-1575EB0F1DA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4E9743F-B24C-4289-AAD3-1575EB0F1DA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4E9743F-B24C-4289-AAD3-1575EB0F1DA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85AC61BF-DC8D-47C5-A0F8-520CC03D3E0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85AC61BF-DC8D-47C5-A0F8-520CC03D3E0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85AC61BF-DC8D-47C5-A0F8-520CC03D3E0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85AC61BF-DC8D-47C5-A0F8-520CC03D3E0A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {791E6A39-6163-492B-AB94-AB2DD899B353}
+	EndGlobalSection
+EndGlobal

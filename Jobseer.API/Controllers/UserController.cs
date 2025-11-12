@@ -1,0 +1,29 @@
+﻿using Jobseer.Application.Common;
+using Jobseer.Application.Features.User.Commands.CreateUser;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Jobseer.API.Controllers
+{
+    [Route("api/user")]
+    [ApiController]
+    public class UserController : ControllerBase
+    {
+        private readonly IMediator _mediator;
+
+        public UserController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+
+        [HttpPost]
+        [ProducesResponseType(typeof(BaseResponse<CreateUserResponse>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseResponse<CreateUserResponse>), StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> CreateUser([FromBody] CreateUserCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            return Ok(BaseResponse<CreateUserResponse>.SuccessResponse(result, "register successful"));
+        }
+    }
+}

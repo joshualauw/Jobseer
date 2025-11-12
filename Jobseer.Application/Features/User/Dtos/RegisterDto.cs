@@ -1,6 +1,12 @@
-﻿namespace Jobseer.Application.Features.User.Commands.CreateUser
+﻿namespace Jobseer.Application.Features.User.Dtos
 {
-    public class CreateUserResponse
+    public class RegisterDto
+    {
+        public string Email { get; set; }
+        public string Password { get; set; }
+    }
+
+    public class RegisterResponseDto
     {
         public string Id { get; set; }
         public string Email { get; set; } = string.Empty;

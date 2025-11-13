@@ -1,7 +1,7 @@
 ﻿using Jobseer.Application.Features.User.Dtos;
 using Jobseer.Application.Interfaces;
+using Jobseer.Infrastructure.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Logging;
 
 namespace Jobseer.Infrastructure.Services
 {
@@ -9,12 +9,15 @@ namespace Jobseer.Infrastructure.Services
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly ITokenService _tokenService;
 
         public UserService(UserManager<IdentityUser> userManager, 
-            SignInManager<IdentityUser> signInManager)
+            SignInManager<IdentityUser> signInManager,
+            ITokenService tokenService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _tokenService = tokenService;
         }
 
         public async Task<LoginResponseDto> LoginAsync(LoginDto payload)
@@ -37,11 +40,14 @@ namespace Jobseer.Infrastructure.Services
                 throw new Exception("User not found");
             }
 
+            var token = await _tokenService.GenerateToken(user);
+
             return new LoginResponseDto
             {
                 Id = user.Id,
                 Email = user.Email ?? string.Empty,
-                Username = user.UserName ?? string.Empty
+                Username = user.UserName ?? string.Empty,
+                Token = token,
             };
         }
 

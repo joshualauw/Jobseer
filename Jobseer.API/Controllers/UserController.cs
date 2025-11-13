@@ -1,5 +1,6 @@
-﻿using Jobseer.Application.Common;
+﻿ using Jobseer.Application.Common;
 using Jobseer.Application.Features.User.Commands.CreateUser;
+using Jobseer.Application.Features.User.Commands.Login;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,14 +17,24 @@ namespace Jobseer.API.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost]
+        [HttpPost("register")]
         [ProducesResponseType(typeof(BaseResponse<CreateUserResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(BaseResponse<CreateUserResponse>), StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> CreateUser([FromBody] CreateUserCommand command)
+        public async Task<IActionResult> Register([FromBody] CreateUserCommand command)
         {
             var result = await _mediator.Send(command);
 
             return Ok(BaseResponse<CreateUserResponse>.SuccessResponse(result, "register successful"));
+        }
+
+        [HttpPost("login")]
+        [ProducesResponseType(typeof(BaseResponse<LoginResponse>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseResponse<LoginResponse>), StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> Login([FromBody] LoginCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            return Ok(BaseResponse<LoginResponse>.SuccessResponse(result, "login successful"));
         }
     }
 }

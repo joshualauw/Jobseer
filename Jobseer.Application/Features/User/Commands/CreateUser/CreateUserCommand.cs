@@ -1,5 +1,4 @@
-﻿using Jobseer.Application.Common;
-using MediatR;
+﻿using MediatR;
 
 namespace Jobseer.Application.Features.User.Commands.CreateUser
 {

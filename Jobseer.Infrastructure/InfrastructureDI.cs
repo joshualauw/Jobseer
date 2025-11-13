@@ -1,6 +1,7 @@
 ﻿using Jobseer.Application.Interfaces;
 using Jobseer.Infrastructure.Data;
 using Jobseer.Infrastructure.Services;
+using Jobseer.Infrastructure.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -35,6 +36,7 @@ namespace Jobseer.Infrastructure
 
             // Register application services
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ITokenService, TokenService>();
 
             // JWT Authentication configuration
             var jwtSettings = configuration.GetSection("Jwt");
